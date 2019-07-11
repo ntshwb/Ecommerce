@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Product List
+{% endblock title %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid pt-2 pb-2">
+    <div class="container container-fluid">
+        <h1 class="display-3">Products</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        
+    
+        {% for product in products %}
+        <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <img src="{{product.image_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">
+                <div class="row">
+                    <div class="col-md-6">
+                        {{product.name}}
+                    </div>
+                    <div class="col-md-6 text-right">
+                            {{product.price}} THB
+                        </div>
+                </div>
+                </h5>
+                <p class="card-text">{{product.description}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
